@@ -1,0 +1,55 @@
+﻿<div class="container">
+    <div class="row">
+        <div class="center-form panel">
+            <div class="panel-body">
+                <h2 class="text-center">Inscrever-se</h2>
+                <form method="post" ng-submit="signup()" name="signupForm">
+                    <div class="form-group has-feedback" ng-class="{ 'has-error' : signupForm.nome.$invalid && signupForm.nome.$dirty }">
+                        <input class="form-control input-lg" type="text" name="nome" ng-model="user.nome" placeholder="Nome" required autofocus>
+                        <span class="ion-person form-control-feedback"></span>
+                        <div class="help-block text-danger" ng-if="signupForm.nome.$dirty" ng-messages="signupForm.nome.$error">
+                            <div ng-message="required">Preencha seu nome.</div>
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback" ng-class="{ 'has-error' : signupForm.sobrenome.$invalid && signupForm.sobrenome.$dirty }">
+                        <input class="form-control input-lg" type="text" name="sobrenome" ng-model="user.sobrenome" placeholder="Sobrenome" required autofocus>
+                        <span class="ion-person form-control-feedback"></span>
+                        <div class="help-block text-danger" ng-if="signupForm.sobrenome.$dirty" ng-messages="signupForm.sobrenome.$error">
+                            <div ng-message="required">Preencha seu sobrenome.</div>
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback" ng-class="{ 'has-error' : signupForm.email.$invalid && signupForm.email.$dirty }">
+                        <input class="form-control input-lg" type="email" id="email" name="email" ng-model="user.email" placeholder="E-mail" required ng-remote-validate="{{uniqueEmailValidation}}" ng-remote-method="GET">
+                        <span class="ion-at form-control-feedback"></span>
+                        <div class="help-block text-danger" ng-if="signupForm.email.$dirty" ng-messages="signupForm.email.$error">
+                            <div ng-message="required">Preencha seu e-mail.</div>
+                            <div ng-message="email">Email inválido.</div>
+                            <div ng-message="ngRemoteValidate">E-mail indisponível, por favor use outro.</div>
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback" ng-class="{ 'has-error' : signupForm.password.$invalid && signupForm.password.$dirty }">
+                        <input password-strength class="form-control input-lg" type="password" name="password" ng-model="user.password" placeholder="Senha" required 
+                               ng-pattern="passwordPattern" ng-minlength="6">
+                        <span class="ion-key form-control-feedback"></span>
+                        <div class="help-block text-danger" ng-if="signupForm.password.$dirty" ng-messages="signupForm.password.$error">
+                            <div ng-message="required">Preencha uma senha.</div>
+                            <div ng-message="minlength">A senha deve possuir pelo menos 6 caracteres.</div>
+                            <div ng-message="pattern">A senha deve conter pelo menos 1 letra maiúscula, 1 letra minúscula e um caractere especial.</div>
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback" ng-class="{ 'has-error' : signupForm.confirmPassword.$invalid && signupForm.confirmPassword.$dirty }">
+                        <input password-match="user.password" class="form-control input-lg" type="password" name="confirmPassword" ng-model="user.confirmPassword" placeholder="Confirmar Senha">
+                        <span class="ion-key form-control-feedback"></span>
+                        <div class="help-block text-danger" ng-if="signupForm.confirmPassword.$dirty" ng-messages="signupForm.confirmPassword.$error">
+                            <div ng-message="compareTo">As senhas devem ser iguais.</div>
+                        </div>
+                    </div>
+                    <p class="text-center text-muted"><small>Ao clicar em Entrar, você concorda com os <a href="#">termos e condições,</a> e <a href="#">política de privacidade</a></small></p>
+                    <button type="submit" ng-disabled="signupForm.$invalid" class="btn btn-lg btn-block btn-primary">Inscrever-se</button>
+                    <br />
+                    <p class="text-center text-muted">Já possui uma conta? <a href="/#/login">Entrar</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
