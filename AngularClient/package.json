@@ -1,0 +1,25 @@
+{
+  "name": "angular-client",
+  "version": "1.0.0",
+  "description": "Client com Angular JS",
+  "main": "index.html",
+  "author": "Rafael Liendo",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.6.1",
+    "angular-animate": "^1.6.1",
+    "angular-cookies": "^1.6.1",
+    "angular-messages": "^1.6.1",
+    "angular-mocks": "^1.6.1",
+    "angular-resource": "^1.6.1",
+    "angular-sanitize": "^1.6.1",
+    "angular-toastr": "^2.1.1",
+    "angular-ui-grid": "^4.0.2",
+    "angular-ui-router": "^0.3.2",
+    "animate.css": "^3.5.2",
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0",
+    "ionicons": "^3.0.0",
+    "satellizer": "^0.15.5"
+  }
+}

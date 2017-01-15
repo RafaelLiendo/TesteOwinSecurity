@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -24,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -66,7 +68,15 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="fonts\OFL.txt" />
     <Content Include="packages.config" />
+    <Content Include="package.json" />
+    <Content Include="fonts\montserrat-bold-webfont.woff" />
+    <Content Include="fonts\montserrat-bold-webfont.woff2" />
+    <Content Include="fonts\Montserrat-Bold.ttf" />
+    <Content Include="fonts\montserrat-regular-webfont.woff" />
+    <Content Include="fonts\montserrat-regular-webfont.woff2" />
+    <Content Include="fonts\Montserrat-Regular.ttf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -86,9 +96,8 @@
     <Content Include="directives\passwordStrength.js" />
     <Content Include="favicon.png" />
     <Content Include="index.html" />
-    <Content Include="vendor\angular-cookies.js" />
+    <Content Include="stylesheets\font-face.css" />
     <Content Include="vendor\ngRemoteValidate.0.6.1.min.js" />
-    <Content Include="vendor\ui-grid.min.js" />
     <Content Include="views\home.html" />
     <Content Include="views\login.html" />
     <Content Include="views\produtos.html" />
@@ -96,26 +105,20 @@
     <Content Include="services\produtos.js" />
     <Content Include="stylesheets\angular-toastr.css" />
     <Content Include="stylesheets\styles.css" />
-    <Content Include="vendor\angular-animate.js" />
-    <Content Include="vendor\angular-messages.js" />
-    <Content Include="vendor\angular-mocks.js" />
-    <Content Include="vendor\angular-resource.js" />
-    <Content Include="vendor\angular-sanitize.js" />
-    <Content Include="vendor\angular-toastr.js" />
-    <Content Include="vendor\angular-toastr.tpls.js" />
-    <Content Include="vendor\angular-ui-router.js" />
-    <Content Include="vendor\angular.js" />
-    <Content Include="vendor\satellizer.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ProjectExtensions>

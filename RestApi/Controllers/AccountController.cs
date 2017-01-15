@@ -73,6 +73,7 @@ namespace RestApi.Controllers
         public IHttpActionResult Logout()
         {
             Authentication.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+
             return Ok();
         }
 
@@ -82,8 +83,10 @@ namespace RestApi.Controllers
         [HostAuthentication(DefaultAuthenticationTypes.ExternalCookie)]
         [AllowAnonymous]
         public IHttpActionResult LogoutExternal()
-        {            
-            Authentication.SignOut(DefaultAuthenticationTypes.ExternalCookie, DefaultAuthenticationTypes.ExternalBearer, DefaultAuthenticationTypes.ApplicationCookie);
+        {
+            Authentication.SignOut(DefaultAuthenticationTypes.ExternalCookie);
+            Authentication.SignOut(DefaultAuthenticationTypes.ExternalBearer);
+
             return Ok();
         }
 

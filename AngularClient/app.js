@@ -1,6 +1,6 @@
 angular.module('MyApp', ['ngResource', 'ngMessages', 'ngAnimate', 'ngCookies', 'toastr', 'ui.router', 'satellizer', 'ui.grid', 'remoteValidation'])
     .constant("apiUrl", 'http://localhost:62711')
-    .config(function($stateProvider, $urlRouterProvider, $authProvider, apiUrl) {
+    .config(function($stateProvider, $locationProvider, $urlRouterProvider, $authProvider, apiUrl) {
 
         /**
          * Helper auth functions
@@ -73,6 +73,7 @@ angular.module('MyApp', ['ngResource', 'ngMessages', 'ngAnimate', 'ngCookies', '
                 }
             });
         $urlRouterProvider.otherwise('/');
+        $locationProvider.hashPrefix("");
 
         //AuthConfig
         $authProvider.baseUrl = apiUrl;

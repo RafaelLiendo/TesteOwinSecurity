@@ -1,62 +1,84 @@
 ﻿<!DOCTYPE html>
 <html ng-app="MyApp">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Projeto Teste</title>
-  <link href="favicon.png" rel="shortcut icon">
-  <link href="//fonts.googleapis.com/css?family=Roboto|Montserrat:400,700|Open+Sans:400,300,600" rel="stylesheet">
-  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-  <link href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
-  <link href="//cdn.jsdelivr.net/animatecss/3.2.0/animate.css" rel="stylesheet">
-  <link href="/stylesheets/angular-toastr.css" rel="stylesheet">
-  <link href="//cdn.rawgit.com/angular-ui/bower-ui-grid/master/ui-grid.min.css" rel="stylesheet">
-  <link href="/stylesheets/styles.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Teste Owin Security</title>
+    <link href="favicon.png" rel="shortcut icon">
+
+    <link href="/node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/node_modules/ionicons/dist/css/ionicons.min.css" rel="stylesheet" />
+    <link href="/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/node_modules/animate.css/animate.min.css" rel="stylesheet" />
+    <link href="/node_modules/angular-toastr/dist/angular-toastr.min.css" rel="stylesheet" />
+    <link href="/node_modules/angular-ui-grid/ui-grid.min.css" rel="stylesheet" />
+
+    <link href="/stylesheets/font-face.css" rel="stylesheet">
+    <link href="/stylesheets/styles.css" rel="stylesheet">
+    
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
 </head>
 <body>
-<div ng-controller="NavbarController" class="navbar navbar-default navbar-static-top">
-  <div class="navbar-header">
-    <a class="navbar-brand" href="/"><i class="ion-ios7-pulse-strong"></i> Projeto Teste</a>
-  </div>
-  <ul class="nav navbar-nav">
-    <li><a href="/#/">Início</a></li>
-    <li ng-if="isAuthenticated()"><a href="/#/produtos">Produtos</a></li>
-  </ul>
-  <ul ng-if="!isAuthenticated()" class="nav navbar-nav pull-right">
-    <li><a href="/#/login">Entrar</a></li>
-    <li><a href="/#/signup">inscrever-se</a></li>
-  </ul>
-  <ul ng-if="isAuthenticated()" class="nav navbar-nav pull-right">
-    <li><a href="/#/logout">Sair</a></li>
-  </ul>
-</div>
+    <div ng-controller="NavbarController" class="navbar navbar-default navbar-static-top">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/"><i class="ion-ios7-pulse-strong"></i> Projeto Teste</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="/#/">Início</a></li>
+            <li ng-if="isAuthenticated()"><a href="/#/produtos">Produtos</a></li>
+        </ul>
+        <ul ng-if="!isAuthenticated()" class="nav navbar-nav pull-right">
+            <li><a href="/#/login">Entrar</a></li>
+            <li><a href="/#/signup">inscrever-se</a></li>
+        </ul>
+        <ul ng-if="isAuthenticated()" class="nav navbar-nav pull-right">
+            <li><a href="/#/logout">Sair</a></li>
+        </ul>
+    </div>
 
-<div ui-view></div>   
+    <div ui-view></div>
 
-<!-- Third-party Libraries -->
-<script src="/vendor/angular.js"></script>
-<script src="/vendor/angular-animate.js"></script>
-<script src="/vendor/angular-messages.js"></script>
-<script src="/vendor/angular-resource.js"></script>
-<script src="/vendor/angular-sanitize.js"></script>
-<script src="/vendor/angular-cookies.js"></script>
-<script src="/vendor/angular-ui-router.js"></script>
-<script src="/vendor/angular-toastr.tpls.js"></script>
-<script src="/vendor/satellizer.js"></script>
-<script src="/vendor/ngRemoteValidate.0.6.1.min.js"></script>
-<script src="vendor/ui-grid.min.js"></script>
+    <!-- Third-party Libraries -->
+    <!--<script src="/vendor/angular.js"></script>
+    <script src="/vendor/angular-animate.js"></script>
+    <script src="/vendor/angular-messages.js"></script>
+    <script src="/vendor/angular-resource.js"></script>
+    <script src="/vendor/angular-sanitize.js"></script>
+    <script src="/vendor/angular-cookies.js"></script>
+    <script src="/vendor/angular-ui-router.js"></script>
+    <script src="/vendor/angular-toastr.tpls.js"></script>
+    <script src="/vendor/satellizer.js"></script>
+    <script src="/vendor/ngRemoteValidate.0.6.1.min.js"></script>
+    <script src="vendor/ui-grid.min.js"></script>-->
 
-<!-- Application Code -->
-<script src="/app.js"></script>
-<script src="/directives/passwordStrength.js"></script>
-<script src="/directives/passwordMatch.js"></script>
-<script src="/controllers/home.js"></script>
-<script src="/controllers/login.js"></script>
-<script src="/controllers/signup.js"></script>
-<script src="/controllers/logout.js"></script>
-<script src="/controllers/produtos.js"></script>
-<script src="/controllers/navbar.js"></script>
-<script src="/services/produtos.js"></script>
+    <script src="/node_modules/angular/angular.min.js"></script>
+    <script src="/node_modules/angular-animate/angular-animate.min.js"></script>
+    <script src="/node_modules/angular-messages/angular-messages.min.js"></script>
+    <script src="/node_modules/angular-resource/angular-resource.min.js"></script>
+    <script src="/node_modules/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="/node_modules/angular-cookies/angular-cookies.min.js"></script>
+    <script src="/node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="/node_modules/angular-toastr/dist/angular-toastr.tpls.min.js"></script>
+    <script src="/node_modules/satellizer/dist/satellizer.min.js"></script>
+    <script src="/node_modules/angular-ui-grid/ui-grid.min.js"></script>
+    <script src="/vendor/ngRemoteValidate.0.6.1.min.js"></script>
+
+    <!-- Application Code -->
+    <script src="/app.js"></script>
+    <script src="/directives/passwordStrength.js"></script>
+    <script src="/directives/passwordMatch.js"></script>
+    <script src="/controllers/home.js"></script>
+    <script src="/controllers/login.js"></script>
+    <script src="/controllers/signup.js"></script>
+    <script src="/controllers/logout.js"></script>
+    <script src="/controllers/produtos.js"></script>
+    <script src="/controllers/navbar.js"></script>
+    <script src="/services/produtos.js"></script>
 </body>
 </html>
