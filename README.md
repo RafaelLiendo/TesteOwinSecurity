@@ -43,6 +43,8 @@ git clone --depth 1 https://github.com/RafaelLiendo/TesteOwinSecurity.git
 ####Execute os projetos "AngularClient" e "RestApi" simultaneamente. [Instruções aqui.](https://msdn.microsoft.com/en-us/library/ms165413.aspx)
 
 
-*Observação*: Não é necessário instalar as dependências via npm ou instalar o node.js, pois o Visual Studio 2015 executa esta tarefa automaticamente.
+#####*Observações*: 
+* Não é necessário instalar as dependências via npm ou instalar o node.js, pois o Visual Studio 2015 executa esta tarefa automaticamente.
+* Não é necessário excutar o comando "Update-Database" do migrations, pois a aplicação já excuta esta tarefa automaticamente.
 
 
