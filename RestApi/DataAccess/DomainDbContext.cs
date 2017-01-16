@@ -1,5 +1,6 @@
 using System.Data.Entity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using RestApi.Migrations;
 using RestApi.Models;
 
 namespace RestApi.DataAccess
@@ -9,6 +10,8 @@ namespace RestApi.DataAccess
         public DomainDbContext()
             : base("name=DefaultConnection")
         {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<DomainDbContext, Configuration>());
+
             Configuration.LazyLoadingEnabled = false;
         }
 
