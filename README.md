@@ -11,15 +11,19 @@ Implementação de uma Api Rest com autenticação OAuth utilizando Microsoft.Ow
 
 * Login com Facebook
 
+* Inicialização do Banco de Dados Automática.
+
+* Documentação da API com Swagger.
+
 ### Tecnologias
 
 * Asp.NET Web API
 
+* Asp.NET Identity.
+
 * Entity Framework
 
 * Entity Framework Migrations
-
-* Asp.NET Identity.
 
 * AngularJS
 
