@@ -7,11 +7,14 @@ namespace RestApi.DataAccess
 {
     public class DomainDbContext : IdentityDbContext<Usuario>
     {
+        static DomainDbContext()
+        {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<DomainDbContext, Configuration>());            
+        }
+
         public DomainDbContext()
             : base("name=DefaultConnection")
         {
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<DomainDbContext, Configuration>());
-
             Configuration.LazyLoadingEnabled = false;
         }
 
